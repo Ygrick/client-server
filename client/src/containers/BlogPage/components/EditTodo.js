@@ -1,13 +1,23 @@
 import React, { Fragment, useState } from "react";
 
+
 const EditTodo = ({ todo }) => {
   const [description, setDescription] = useState(todo.description);
 
   //edit description function
+  var url;
+  if (todo.admin == 'admin') {
+    url = 'todos1'
+  } else {
+    url = 'todos2'
+  }
+  // console.log(url);
 
   const updateDescription = async e => {
     e.preventDefault();
     try {
+      console.log(description);
+      console.log(todo.todo_id);
       const body = { description };
       const response = await fetch(
         `http://localhost:3001/todos/${todo.todo_id}`,

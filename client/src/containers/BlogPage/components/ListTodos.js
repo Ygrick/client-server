@@ -8,11 +8,6 @@ const ListTodos = ({isAdmin}) => {
   var admin;
   //delete todo function
   console.log(isAdmin)
-  if (isAdmin) {
-    admin = "http://localhost:3001/todos1"
-  } else {
-    admin = 'http://localhost:3001/todos2'
-  }
   const deleteTodo = async id => {
     try {
       const deleteTodo = await fetch(`http://localhost:3001/todos/${id}`, {
@@ -25,7 +20,11 @@ const ListTodos = ({isAdmin}) => {
     }
   };
 
-  
+  if (isAdmin) {
+    admin = "http://localhost:3001/todos1"
+  } else {
+    admin = 'http://localhost:3001/todos2'
+  }
   const getTodos = async () => {
     try {
       const response = await fetch(admin);

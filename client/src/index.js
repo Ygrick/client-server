@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 // import 'antd/dist/antd.css';
 import { App } from './App';
 import { QueryClient, QueryClientProvider } from 'react-query';
-import 'bootstrap/dist/css/bootstrap.min.css'; 
+
 
 const queryClient = new QueryClient();
 
